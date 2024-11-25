@@ -19,14 +19,14 @@ class CustomGoogleLLM(LLM):
         self.llm = ChatGoogleGenerativeAI(
             model="gemini-pro",
             google_api_key=os.getenv("GOOGLE_API_KEY"),
-            temperature=0.7,
+            temperature=0.0,
             convert_system_message_to_human=True
         )
         
         # Add required attributes
         self.stop = None  # Required by CrewAI
-        self.temperature = 0.7
-        self.model = "gemini-pro"
+        #self.temperature = 0.7
+        #self.model = "gemini-pro"
     
     def call(self, prompt, **kwargs):
         """Override the call method to use ChatGoogleGenerativeAI directly"""

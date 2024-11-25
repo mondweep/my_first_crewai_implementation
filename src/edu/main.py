@@ -23,6 +23,11 @@ warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 # interpolate any tasks and agents information
 
 def run():
+    print(f"Current topic from env: {os.getenv('CREW_TOPIC')}")
+    
+    load_dotenv(override=True)
+    print(f"Topic after reload: {os.getenv('CREW_TOPIC')}")
+    
     edu = Edu()
     print("I have instantiated the Edu class")
     crew = edu.get_crew()
